@@ -306,12 +306,15 @@ VISTA 0
 
       <div class="info-grupo">
           <div class="info-label">
-              Hora de ingreso
+              Hora de salida
           </div>
       
-          <div id="asignar-hora" class="info-valor">
+          <div id="devolver-hora" class="info-valor">
               -
           </div>
+      </div>
+
+
       </div>
       <button class="btn-accion btn-volver" onclick="regresarAlMenuPrincipal()">VOLVER A ESCANEAR</button>
     </div>
@@ -319,7 +322,7 @@ VISTA 0
 
   <script>
     
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxLTIeAb7OJkhtZAGG53I5n0OTjYku1-Ux22IeXik-9L6XwgNaABywkpSDCKUCkVSc0gg/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwmQG9IfqytWnIHxuVd6IC25WyffrrROugdD0JA5io-Xij9WlZL8n1x7egkZ4SqkGysUA/exec";
     let html5QrcodeScanner = null;
     let procesandoScan = false;
     let modoAccionActual = ""; 
@@ -570,6 +573,7 @@ VISTA 0
           document.getElementById("devolver-mensaje-badge").innerText = "✓ " + data.mensaje;
           document.getElementById("devolver-nombre").innerText = data.nombre || "No especificado";
           document.getElementById("devolver-cedula").innerText = data.cedula || "No especificado";
+          document.getElementById("devolver-hora").innerText = data.horaSalida || "-";
           
           const imgElement = document.getElementById("devolver-img");
           if (data.imagenCedula) {
